@@ -19,7 +19,7 @@ class GildedRose(var items: Array<Item>) {
             if (item.quality < 50) {
                 item.quality = item.quality + 1
 
-                if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
+                if (isConcert(item)) {
                     if (item.sellIn < 11) {
                         if (item.quality < 50) {
                             item.quality = item.quality + 1
@@ -57,6 +57,8 @@ class GildedRose(var items: Array<Item>) {
             }
         }
     }
+
+    private fun isConcert(item: Item) = item.name == "Backstage passes to a TAFKAL80ETC concert"
 
 }
 
